@@ -1708,7 +1708,9 @@ if (l10n.language === "en" || l10n.dictionary !== undefined) {
     WebUtil.fetchJSON('app/locale/' + l10n.language + '.json')
         .then((translations) => { l10n.dictionary = translations; })
         .catch(err => Log.Error("Failed to load translations: " + err))
-        .then(UI.prime);
+        .then(UI.prime).then(function(){
+				UI.connect(null,'123123')
+			});
 }
 
 export default UI;
